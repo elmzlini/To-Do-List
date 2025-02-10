@@ -1,0 +1,216 @@
+/* Ajouter une légère transparence et effet de profondeur */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+body.dark-mode .container {
+    background: rgba(68, 68, 68, 0.95);
+}
+
+/* Style personnalisé pour les checkboxes */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #28a745;
+    margin-right: 10px;
+}
+
+/* Meilleur espacement entre les éléments */
+li {
+    gap: 15px;
+    padding: 15px;
+    margin: 8px 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode li {
+    background: rgba(85, 85, 85, 0.9);
+}
+
+/* Style des icônes */
+button i {
+    font-size: 16px;
+    transition: transform 0.2s ease;
+}
+
+button:hover i {
+    transform: scale(1.1);
+}
+
+/* Effet "neumorphique" pour les boutons */
+#themeToggleBtn {
+    background: #f0f0f0;
+    color: #333;
+    box-shadow: 5px 5px 10px #d1d1d1, 
+               -5px -5px 10px #ffffff;
+}
+
+body.dark-mode #themeToggleBtn {
+    background: #444;
+    box-shadow: 5px 5px 10px #2d2d2d, 
+               -5px -5px 10px #5b5b5b;
+}
+/* Effet de soulignement animé pour les titres */
+h1 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #28a745;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+h1:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Animation de rotation pour les icônes */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+    animation: spin 1s linear infinite;
+}
+
+/* Effet de parallaxe léger au scroll */
+.container {
+    transform: translateZ(0);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-3px);
+}
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+    background: #444;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+    background: #666;
+}
+@media (max-width: 480px) {
+    /* Adaptation pour très petits écrans */
+    .container {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    button {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+}
+:root {
+    --primary-color: #28a745;
+    --secondary-color: #007bff;
+    --background-light: #ffffff;
+    --background-dark: #444444;
+    --text-light: #333333;
+    --text-dark: #ffffff;
+}
+
+/* Utilisation des variables */
+body {
+    background: linear-gradient(135deg, var(--background-light), #e0e0e0);
+}
+
+body.dark-mode {
+    background: linear-gradient(135deg, var(--background-dark), #222222);
+}
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-10px); }
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+
+body.dark-mode .card {
+    background-color: #34495e !important;
+    border-color: #2c3e50;
+}
+
+body.dark-mode .list-group-item {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    border-color: #3b4a5c;
+}
+
+body.dark-mode .form-control {
+    background-color: #3b4a5c;
+    border-color: #4a5c6e;
+    color: #ecf0f1;
+}
+
+/* Effets de survol */
+.list-group-item:hover {
+    transform: translateX(10px);
+    transition: transform 0.3s ease;
+}
+
+/* Icônes interactives */
+.btn i {
+    transition: transform 0.2s;
+}
+
+.btn:hover i {
+    transform: scale(1.2);
+}
+
+/* Tâches complétées */
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+    background-color: #f8f9fa !important;
+}
+
+body.dark-mode .completed {
+    background-color: #3b4a5c !important;
+}
